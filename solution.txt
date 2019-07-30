@@ -1,0 +1,31 @@
+#1
+grep "^Z" cities.txt
+
+#2 
+grep ".*gan\>" cities.txt
+
+#3 
+grep "^[ADE]" cities.txt
+
+#4
+--comment: Would have liked to done "^|-| " append ".ar" but had to settle for a long sequence of "or"s. 
+grep -E "^.ar|-.ar| .ar" cities.txt
+
+#5 
+grep "^[^C]" cities.txt
+
+#6 
+egrep "[^ ]{14}" cities.txt
+
+#7 
+grep -c "^B" cities.txt
+
+#8 
+grep -o "d" cities.txt | wc -l
+
+#9 
+egrep "(.)\1$" cities.txt
+
+#10
+--comment: Takes each line in the cities.txt, appends a $ and ^ to beginning and end respectively, then reverse that line and use it as a regex pattern in grep and searches the entire cities.txt for that regex pattern. Could probably be quicker if it searched by exact line.
+while read in; do echo "\$$in^" | rev | grep -if - cities.txt; done < cities.txt
