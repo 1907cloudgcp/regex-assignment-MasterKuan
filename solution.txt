@@ -8,8 +8,7 @@ grep ".*gan\>" cities.txt
 grep "^[ADE]" cities.txt
 
 #4
---comment: Would have liked to done "^|-| " append ".ar" but had to settle for a long sequence of "or"s. 
-grep -E "^.ar|-.ar| .ar" cities.txt
+grep -E "^.ar|[- ].ar" cities.txt
 
 #5 
 grep "^[^C]" cities.txt
