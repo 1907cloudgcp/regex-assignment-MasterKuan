@@ -8,7 +8,7 @@ grep ".*gan\>" cities.txt
 grep "^[ADE]" cities.txt
 
 #4
-grep -E "^.ar|[- ].ar" cities.txt
+grep -E "(^[- ]).ar" cities.txt
 
 #5 
 grep "^[^C]" cities.txt
